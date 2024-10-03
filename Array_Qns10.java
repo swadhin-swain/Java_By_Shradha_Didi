@@ -28,7 +28,7 @@ public class Array_Qns10 {
         System.out.println("The time complexity is o(n2).");
     }
     public static void main(String[] args) {
-        int numbers[] = {1,-2,6,-1,3};
+        int numbers[] = {1};
 
         maxSubArraySumByPrefixArray(numbers);
     }

@@ -9,7 +9,7 @@ public class Cyclic_Sort_Qns1 {
          
         while(i < nums.length){
             int correctIndex = nums[i];
-
+            
             if(nums[i] < nums.length && nums[i] != nums[correctIndex]){
                 int temp = nums[i];
                 nums[i] = nums[correctIndex];

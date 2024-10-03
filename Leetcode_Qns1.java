@@ -1,5 +1,8 @@
+//maximum binary number
+//ex->if the array is [0,1,0] then convert to [0,0,1] & [1,0,1,1,0]->[1,1,0,0,1]
+
 public class Leetcode_Qns1 {
-    public String maximumOddBinaryNumber(String s) {
+    public static String maximumOddBinaryNumber(String s) {
         StringBuilder sb = new StringBuilder();
 
         int count1=0;
@@ -21,7 +24,7 @@ public class Leetcode_Qns1 {
     }
 
     //or 
-    public String maximumOddBinaryNumber2(String s) {
+    public static String maximumOddBinaryNumber2(String s) {
         String ans = "";
         int count1 = 0;
 
@@ -46,7 +49,7 @@ public class Leetcode_Qns1 {
 
         }
     
-    public  void main(String[] args) {
+    public static void main(String[] args) {
         String s = "1000011";
 
         // String ans = maximumOddBinaryNumber(s);

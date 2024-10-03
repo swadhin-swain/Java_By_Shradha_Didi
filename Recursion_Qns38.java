@@ -2,21 +2,22 @@
 
 public class Recursion_Qns38 {
     public static int queens(boolean[][] board, int row) {
-        //if the row is reached in its last position then all quuens are placed in their position
-        if(row == board.length) {
-            //create a function for displaying the board  
+        // if the row is reached in its last position then all quuens are placed in
+        // their position
+        if (row == board.length) {
+            // create a function for displaying the board
             display(board);
             System.out.println();
             return 1;
         }
         int count = 0;
-        //we are now placing the queen and chaecking for every row and col
-        for(int col = 0;col < board.length;col++) {
-            //place the queen if the cell is safe
-            if(isSafe(board,row,col) == true) {
+        // we are now placing the queen and chaecking for every row and col
+        for (int col = 0; col < board.length; col++) {
+            // place the queen if the cell is safe
+            if (isSafe(board, row, col) == true) {
                 board[row][col] = true;
-                count += queens(board, row +1);
-                //when return of the function call then change that cell into false
+                count += queens(board, row + 1);
+                // when return of the function call then change that cell into false
                 board[row][col] = false;
             }
         }
@@ -24,27 +25,27 @@ public class Recursion_Qns38 {
         return count;
     }
 
-    //creating isSafe function
+    // creating isSafe function
     public static boolean isSafe(boolean[][] board, int row, int col) {
-        //check vertical row
-        for(int i = 0;i < row;i++) {
-            if(board[i][col]) {
+        // check vertical row
+        for (int i = 0; i < row; i++) {
+            if (board[i][col]) {
                 return false;
             }
         }
 
-        //diagonal left
+        // diagonal left
         int maxLeft = Math.min(row, col);
-        for(int i = 1;i <= maxLeft;i++){
-            if(board[row - i][col - i]){
+        for (int i = 1; i <= maxLeft; i++) {
+            if (board[row - i][col - i]) {
                 return false;
             }
         }
 
-        //diagonal right
-        int maxRight = Math.min(row,board.length - col - 1);
-        for(int i =1;i<=maxRight;i++){
-            if(board[row - i][col + i]){
+        // diagonal right
+        int maxRight = Math.min(row, board.length - col - 1);
+        for (int i = 1; i <= maxRight; i++) {
+            if (board[row - i][col + i]) {
                 return false;
             }
         }
@@ -52,24 +53,24 @@ public class Recursion_Qns38 {
         return true;
     }
 
-        //creatng the display function
-        public static void display(boolean[][] board){
-            for(boolean[] row : board){
-                for(boolean element : row){
-                    if(element == true) {
-                        System.out.print("Q ");
-                    } else {
-                        System.out.print("x ");
-                    }
+    // creatng the display function
+    public static void display(boolean[][] board) {
+        for (boolean[] row : board) {
+            for (boolean element : row) {
+                if (element == true) {
+                    System.out.print("Q ");
+                } else {
+                    System.out.print("x ");
                 }
-                System.out.println();
             }
+            System.out.println();
         }
-    
+    }
+
     public static void main(String[] args) {
         int n = 4;
         boolean board[][] = new boolean[n][n];
-      
-        System.out.println(  queens(board, 0));
+
+        System.out.println(queens(board, 0));
     }
 }

@@ -1,6 +1,9 @@
 import java.util.*;
 
-public class ArrayLists {
+public class Array_Lists {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         ArrayList<Integer>list = new ArrayList<>(10);
         Scanner p= new Scanner(System.in);
