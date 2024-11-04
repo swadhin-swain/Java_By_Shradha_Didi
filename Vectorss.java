@@ -11,5 +11,6 @@ public class Vectorss {
         vector.add(49);
 
         System.out.println(vector);
+        System.out.println("Vector example");
     }
 }
